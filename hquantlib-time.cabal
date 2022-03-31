@@ -10,7 +10,7 @@ description:    HQuantLib is intended to be a functional style port of QuantLib 
 build-type:     Simple
 stability:      alpha
 homepage:       http://github.com/paulrzcz/hquantlib-time.git
-cabal-version:  >= 1.18.0
+cabal-version:  >= 1.18
 
 source-repository head
         type:           git
