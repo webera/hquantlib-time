@@ -1,5 +1,6 @@
 module QuantLib.Time.Date
         ( module QuantLib.Time.Date
+        , DayOfWeek(..)
         ) where
 
 import Data.Time
