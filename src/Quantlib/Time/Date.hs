@@ -15,9 +15,9 @@ data BusinessDayConvention = Following
         | Unadjusted
         deriving (Show, Eq, Enum)
 
--- | Week days
-data WeekDay = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
-        deriving (Show, Eq, Enum)
+-- -- | Week days
+-- data WeekDay = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+--         deriving (Show, Eq, Enum)
 
 -- | Date
 type Date = Day
@@ -35,7 +35,7 @@ class Holiday m where
                         listOfDates             = getDaysBetween (fd, td)
 
 -- | Gets a week day 
-getWeekDay :: Date->WeekDay
+getWeekDay :: Date->DayOfWeek
 getWeekDay d   = toEnum (weekDay - 1)
         where   (_, _, weekDay) = toWeekDate d
 
