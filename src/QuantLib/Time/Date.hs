@@ -4,7 +4,7 @@ module QuantLib.Time.Date
   )
 where
 
-import Data.Time.Calendar (Day (..), addDays, toGregorian, DayOfWeek (..))
+import Data.Time.Calendar (Day (..), DayOfWeek (..), addDays, toGregorian)
 import Data.Time.Calendar.WeekDate (toWeekDate)
 
 -- | Business Day conventions
