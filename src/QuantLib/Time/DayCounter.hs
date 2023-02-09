@@ -2,8 +2,8 @@ module QuantLib.Time.DayCounter
         ( module QuantLib.Time.DayCounter
         ) where
 
-import QuantLib.Time.Date
-import Data.Time.Calendar
+import QuantLib.Time.Date (Date)
+import Data.Time.Calendar (Day(..), toGregorian)
 
 -- | Day counter type class
 class DayCounter m where

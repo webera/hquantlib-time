@@ -2,9 +2,7 @@ module QuantLib.Time.Calendars.Czech
         ( module QuantLib.Time.Calendars.Czech
         ) where
 
-import QuantLib.Time.Date
-import Data.Time.Calendar
-import Data.Time.Calendar.Easter
+import Data.Time.Calendar.Easter (easter)
 
 data CzechCalendar = CzechCalendar
 
