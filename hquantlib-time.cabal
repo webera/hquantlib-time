@@ -1,5 +1,5 @@
 name:           hquantlib-time
-version:        0.0.5.1
+version:        0.0.5.2
 license:        LGPL
 license-file:   LICENSE
 author:         Pavel Ryzhov
@@ -10,7 +10,7 @@ description:    HQuantLib is intended to be a functional style port of QuantLib 
 build-type:     Simple
 stability:      alpha
 homepage:       http://github.com/paulrzcz/hquantlib-time.git
-cabal-version:  >= 1.18
+cabal-version:  1.18.0
 
 source-repository head
         type:           git
@@ -19,7 +19,7 @@ source-repository head
 source-repository this
         type:           git
         location:       https://github.com/paulrzcz/hquantlib-time.git
-        tag:            0.0.5.1
+        tag:            0.0.5.2
 
 flag optimize
         description : Enable optimizations for library and benchmarks
@@ -34,7 +34,7 @@ library
 
         build-depends:
                         base                    >3              && <5,
-                        time                    >= 1.9.0.0      && < 1.10.0.0
+                        time                    >= 1.4.0.0      && < 1.12.0.0
 
         hs-source-dirs: src
         ghc-options:    -Wall

@@ -3,8 +3,8 @@ module QuantLib.Time.Date
         , DayOfWeek(..)
         ) where
 
-import Data.Time
-import Data.Time.Calendar.WeekDate
+import Data.Time.Calendar (Day(..), addDays, toGregorian)
+import Data.Time.Calendar.WeekDate (toWeekDate)
 
 {- | Business Day conventions
  - These conventions specify the algorithm used to adjust a date in case it is not a valid business day.
