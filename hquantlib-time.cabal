@@ -9,8 +9,9 @@ category:       Finance
 synopsis:       HQuantLib Time is a business calendar functions extracted from HQuantLib
 description:    HQuantLib is intended to be a functional style port of QuantLib (http://quantlib.org)
 build-type:     Simple
-stability:      alpha
+stability:      provisional
 homepage:       http://github.com/paulrzcz/hquantlib-time.git
+tested-with:    GHC == 9.4.8
 
 source-repository head
         type:           git

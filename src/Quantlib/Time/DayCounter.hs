@@ -10,9 +10,9 @@ class DayCounter m where
         -- | Name of day counter
         dcName          :: m->String
         -- | Number of business days inbetween
-        dcCount         :: m->Date->Date->Int
+        dcCount         :: m->Day->Day->Int
         -- | Year fraction
-        dcYearFraction  :: m->Date->Date->Double
+        dcYearFraction  :: m->Day->Day->Double
 
 {-
 data SimpleDayCounter = SimpleDayCounter
