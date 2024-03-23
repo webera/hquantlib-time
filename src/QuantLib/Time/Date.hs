@@ -1,6 +1,5 @@
 module QuantLib.Time.Date
   ( module QuantLib.Time.Date,
-    DayOfWeek (..),
   )
 where
 
@@ -23,6 +22,55 @@ data BusinessDayConvention
 
 -- | Date
 type Date = Day
+
+
+{-
+    inline bool Calendar::isBusinessDay(const Date& d) const {
+        QL_REQUIRE(impl_, "no calendar implementation provided");
+
+#ifdef QL_HIGH_RESOLUTION_DATE
+        const Date _d(d.dayOfMonth(), d.month(), d.year());
+#else
+        const Date& _d = d;
+#endif
+
+        if (!impl_->addedHolidays.empty() &&
+            impl_->addedHolidays.find(_d) != impl_->addedHolidays.end())
+            return false;
+
+        if (!impl_->removedHolidays.empty() &&
+            impl_->removedHolidays.find(_d) != impl_->removedHolidays.end())
+            return true;
+
+        return impl_->isBusinessDay(_d);
+    }
+
+    bool Germany::FrankfurtStockExchangeImpl::isBusinessDay(
+      const Date& date) const {
+        Weekday w = date.weekday();
+        Day d = date.dayOfMonth(), dd = date.dayOfYear();
+        Month m = date.month();
+        Year y = date.year();
+        Day em = easterMonday(y);
+        if (isWeekend(w)
+            // New Year's Day
+            || (d == 1 && m == January)
+            // Good Friday
+            || (dd == em-3)
+            // Easter Monday
+            || (dd == em)
+            // Labour Day
+            || (d == 1 && m == May)
+            // Christmas' Eve
+            || (d == 24 && m == December)
+            // Christmas
+            || (d == 25 && m == December)
+            // Christmas Day
+            || (d == 26 && m == December))
+            return false; // NOLINT(readability-simplify-boolean-expr)
+        return true;
+    }
+-}
 
 -- | Defines a holidays for given calendar. Corresponds to calendar class in QuantLib
 class Holiday m where

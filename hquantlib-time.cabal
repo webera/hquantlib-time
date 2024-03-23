@@ -25,16 +25,31 @@ flag optimize
         description : Enable optimizations for library and benchmarks
         default     : True
 
+test-suite tests
+        default-language: Haskell2010
+        type: exitcode-stdio-1.0
+        main-is: CalendarTests.hs
+        build-depends:
+                        HUnit                   >=1.6,
+                        base                    >3              && <5,
+                        time                    >= 1.4.0.0      && < 1.14.0.0,
+                        hquantlib-time
+        hs-source-dirs: tests
+        ghc-options:    -Wall
+    
 library
         default-language: Haskell2010
         exposed-modules:
                 QuantLib.Time
                 QuantLib.Time.Date
                 QuantLib.Time.DayCounter
+                QuantLib.Time.Calendars.Czech
+                QuantLib.Time.Calendars.German
+                QuantLib.Time.Calendars.UnitedStates
 
         build-depends:
                         base                    >3              && <5,
-                        time                    >= 1.4.0.0      && < 1.12.0.0
+                        time                    >= 1.4.0.0      && < 1.14.0.0
 
         hs-source-dirs: src
         ghc-options:    -Wall

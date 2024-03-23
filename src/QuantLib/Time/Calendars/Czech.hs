@@ -3,7 +3,10 @@ module QuantLib.Time.Calendars.Czech
   )
 where
 
-import Data.Time.Calendar.Easter (easter)
+import QuantLib.Time.Date (Holiday(..), isWeekEnd)
+
+import Data.Time.Calendar (addDays, fromGregorian)
+import Data.Time.Calendar.Easter (gregorianEaster)
 
 data CzechCalendar = CzechCalendar
 
