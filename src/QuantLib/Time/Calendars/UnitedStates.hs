@@ -6,7 +6,7 @@ where
 
 import QuantLib.Time.Date (Holiday(..), isWeekEnd)
 
-import Data.Time.Calendar (addDays, dayOfWeek, toGregorian, fromGregorian, Day, DayOfWeek(..), Year)
+import Data.Time.Calendar (addDays, dayOfWeek, fromGregorian, Day, DayOfWeek(..), Year)
 import Data.Time.Calendar.Easter (gregorianEaster)
 
 data UnitedStatesMarket = Settlement | NYSE | GovernmentBond | NERC | LiborImpact | FederalReserve | SOFR
@@ -67,7 +67,7 @@ memorialDay year =
 laborDay :: Year -> Day
 laborDay year =
   let firstDayOfSep = fromGregorian year 9 1
-  in head $ dropWhile (\x -> dayOfWeek x /= Monday) $ firstDayOfSep : iterate (addDays (-1)) firstDayOfSep
+  in head $ dropWhile (\x -> dayOfWeek x /= Monday) $ firstDayOfSep : iterate (addDays 1) firstDayOfSep
 
 -- fourth Thursday in November
 thanksgivingDay :: Year -> Day
